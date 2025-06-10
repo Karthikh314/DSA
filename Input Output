@@ -1,0 +1,16 @@
+class Solution:
+    # Function to take input and display output 
+    def printNumber(self):
+        # Take input
+        number = int(input())
+        
+        # Print output
+        print(number)
+
+# Driver code
+if __name__ == "__main__":
+    # Creating an instance of Solution class
+    sol = Solution()
+    
+    # Function call to take input and display output
+    sol.printNumber()
