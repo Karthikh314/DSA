@@ -1,0 +1,25 @@
+class Solution:
+    # Function to print the grades based on marks
+    def studentGrade(self, marks):
+        
+        # If else ladder
+        if marks >= 90:
+            print("Grade A")
+        elif marks >= 70:
+            print("Grade B")
+        elif marks >= 50:
+            print("Grade C")
+        elif marks >= 35:
+            print("Grade D")
+        else:
+            print("Fail")
+
+if __name__ == "__main__":
+    
+    solution = Solution()
+    
+  
+    marks = int(input("Enter your marks: "))
+    
+    
+    solution.studentGrade(marks)
