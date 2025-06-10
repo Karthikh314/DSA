@@ -1,0 +1,10 @@
+class Solution:
+    def lastChar(self, s):
+        
+        return s[-1]
+
+sol = Solution()
+s = "example"
+
+ans = sol.lastChar(s)
+print("The last character is:", ans)
