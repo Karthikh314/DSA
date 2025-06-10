@@ -1,0 +1,20 @@
+class Solution:
+    
+    def sumOfFirstAndLast(self, nums):
+        if not nums:
+            return 0 # Return 0
+
+        
+        first = nums[0]
+        last = nums[-1]
+      
+        return first + last
+
+
+sol = Solution()
+
+nums = [2, 3, 4, 5, 6]
+
+ans = sol.sumOfFirstAndLast(nums)
+
+print("Sum of first and last element:", ans)
