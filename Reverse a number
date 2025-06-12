@@ -1,0 +1,19 @@
+class Solution:
+    def reverseNumber(self, n):
+        revNum = 0
+        
+        while n > 0:
+            lastDigit = n % 10
+      
+            revNum = (revNum * 10) + lastDigit
+            n = n // 10
+        
+        return revNum
+
+if __name__ == "__main__":
+    n = 6678
+    sol = Solution()
+    
+    # Function call to reverse the digits in n
+    ans = sol.reverseNumber(n)
+    print("The reverse of given number is:", ans)
