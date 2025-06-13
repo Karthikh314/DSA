@@ -1,0 +1,10 @@
+class Solution:
+    def NnumbersSum(self, N):
+        if N == 0:
+            return 0
+        return N + self.NnumbersSum(N - 1)
+
+if __name__ == "__main__":
+    solution = Solution()
+    N = 10 # Example input
+    print(f"Sum of first {N} numbers is {solution.NnumbersSum(N)}")
