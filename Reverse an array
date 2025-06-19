@@ -1,0 +1,28 @@
+class Solution:
+    def reverse(self, arr, n):
+        ans = [0] * n
+        
+        for i in range(n - 1, -1, -1):
+            ans[n - i - 1] = arr[i]
+        
+        for i in range(n):
+            arr[i] = ans[i]
+        
+        return
+ 
+def printArray(arr, n):
+    for i in range(n):
+        print(arr[i], end=" ")
+    print()
+ 
+if __name__ == "__main__":
+    n = 5
+    arr = [5, 4, 3, 2, 1]
+    
+    solution = Solution()
+    print("Original array: ", end="")
+    printArray(arr, n)
+    
+    solution.reverse(arr, n) 
+    print("Reversed array: ", end="")
+    printArray(arr, n)
