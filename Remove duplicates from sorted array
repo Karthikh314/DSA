@@ -1,0 +1,36 @@
+class Solution:
+    def removeDuplicates(self, nums):
+        
+        s = set()
+        
+        for val in nums:
+            s.add(val)
+        
+        sorted_unique = sorted(s)
+        
+
+        for j in range(len(sorted_unique)):
+            nums[j] = sorted_unique[j]
+        
+        # Return the number of unique elements
+        return len(sorted_unique)
+
+def printArray(nums, n):
+    for i in range(n):
+        print(nums[i], end=" ")
+    print()
+
+if __name__ == "__main__":
+    nums = [1, 1, 2, 2, 2, 3, 3]
+    
+    print("Original Array: ", end="")
+    printArray(nums, len(nums))
+    
+    # Create an instance of the Solution class
+    sol = Solution()
+    
+    # Function call to remove duplicates from array
+    k = sol.removeDuplicates(nums)
+    
+    print("Array after removing the duplicates: ", end="")
+    printArray(nums, k)
