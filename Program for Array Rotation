@@ -11,9 +11,6 @@ def reverse(start, end, arr):
         count += 1
     return arr
 
-# Function takes array, length of
-# array and no of rotations as input
-
 
 def left_rotate_array(arr, size, d):
 
@@ -50,4 +47,3 @@ else:
     d = d % size
     print('Rotated array: ', left_rotate_array(arr, size, d))
 
-# This code contributed by SR.Dhanush
