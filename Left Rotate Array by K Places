@@ -31,7 +31,6 @@ if __name__ == "__main__":
 
     sol = Solution()
 
-    # Function call to rotate the array to the left by k places
     sol.rotateArray(nums, k)
 
     print(f"Array after rotating elements by {k} places: ")
