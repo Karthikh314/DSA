@@ -1,11 +1,7 @@
 class Solution:
-    # Function to take input and display output 
     def printNumber(self):
-        # Take input
         number = int(input())
-        
-        # Print output
-        print(number)
+         print(number)
 
 # Driver code
 if __name__ == "__main__":
