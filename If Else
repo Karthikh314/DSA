@@ -1,8 +1,5 @@
 class Solution:
-    # Function to print the grades based on marks
     def studentGrade(self, marks):
-        
-        # If else ladder
         if marks >= 90:
             print("Grade A")
         elif marks >= 70:
