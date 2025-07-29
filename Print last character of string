@@ -1,6 +1,5 @@
 class Solution:
     def lastChar(self, s):
-        
         return s[-1]
 
 sol = Solution()
