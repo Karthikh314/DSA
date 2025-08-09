@@ -2,29 +2,17 @@ class Solution:
   
     def secondLargestElement(self, nums):
         n = len(nums)
-        
-        # Check if the array has less than 2 elements
+      
         if n < 2:
-            # Indicating no second largest element is possible
             return -1
         
-        # Sort the list in ascending order
         nums.sort()
 
-        # Largest element will be at last index
         largest = nums[-1]
 
         secondLargest = -1
 
-        # Traverse the sorted list from right to left
-        for i in range(n-2, -1, -1):
-
-            ''' If the current element is not
-            equal to the largest element'''
-            if nums[i] != largest:
-
-                ''' Assign the current element 
-                as the second largest and break'''
+        for i in range(n-2, -1, -1)
                 secondLargest = nums[i]
                 break
 
