@@ -2,7 +2,6 @@ class Solution:
     def removeDuplicates(self, nums):
         
         s = set()
-        
         for val in nums:
             s.add(val)
         
