@@ -11,8 +11,7 @@ class Solution:
         for i in range(k, n):
             nums[i - k] = nums[i]
 
-      
-        for i in range(k):
+      for i in range(k):
             nums[n - k + i] = temp[i]
 
 
