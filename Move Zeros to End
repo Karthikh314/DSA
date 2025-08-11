@@ -11,8 +11,6 @@ class Solution:
             if nums[i] != 0:
                 temp[count] = nums[i]
                 count += 1
-
-        # Copy non-zero elements back to nums
         for i in range(count):
             nums[i] = temp[i]
 
