@@ -1,0 +1,30 @@
+
+from typing import List
+
+class Solution:
+    # Linear Search Function
+    def linearSearch(self, nums: List[int], target: int) -> int:
+        # Traverse the entire array
+        for i in range(len(nums)):
+
+            # Check if current element is target
+            if nums[i] == target:
+
+                # Return index if target found
+                return i
+
+        # If target not found
+        return -1
+
+# Main function
+if __name__ == "__main__":
+    nums = [1, 2, 3, 4, 5]
+    target = 4
+
+    # Create an instance of the Solution class
+    sol = Solution()
+
+    # Call the linearSearch method and store the result
+    result = sol.linearSearch(nums, target)
+   
+    print(result)
