@@ -1,0 +1,32 @@
+from typing import List
+
+class Solution:
+    def unionArray(self, nums1, nums2):
+        s = set()
+        Union = []
+
+        for num in nums1:
+            s.add(num)
+
+        for num in nums2:
+            s.add(num)
+
+        for num in sorted(s):  # Sorting for union of sorted arrays
+            Union.append(num)
+
+        return Union
+        
+if __name__ == "__main__":
+    # Initialize the arrays (lists in Python)
+    nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    nums2 = [2, 3, 4, 4, 5, 11, 12]
+
+    # Create an instance of the Solution class
+    finder = Solution()
+
+    """ Get the union of nums1 and 
+    nums2 using the class method"""
+    union = finder.unionArray(nums1, nums2)
+
+    print("Union of nums1 and nums2 is:")
+    print(" ".join(map(str, union)))
