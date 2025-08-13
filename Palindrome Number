@@ -7,7 +7,6 @@ class Solution:
             revNum = (revNum * 10) + lastDigit
             n = n // 10
         return revNum == copy
-
 n = 12321
 sol = Solution()
 ans = sol.isPalindrome(n)
