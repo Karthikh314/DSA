@@ -1,18 +1,9 @@
 class Solution:
     def rotateArray(self, nums, k):
         n = len(nums)  # Size of array
-        k = k % n  # To avoid unnecessary rotations
+        k = k % n  # To avoid unnecessary rotation
 
-        temp = []
-
-        for i in range(k):
-            temp.append(nums[i])
-
-        for i in range(k, n):
-            nums[i - k] = nums[i]
-
-      for i in range(k):
-            nums[n - k + i] = temp[i]
+ nums[:]=nums[k:]+nums[:k]
 
 
 def printArray(nums):
