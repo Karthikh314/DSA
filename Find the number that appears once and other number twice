@@ -1,0 +1,25 @@
+class Solution:
+    def singleNumber(self, nums):
+        
+        mpp = {}
+        
+        # Iterate on the array
+        for num in nums:
+            if num in mpp:
+                mpp[num] += 1  #Update the map
+            else:
+                mpp[num] = 1  #Update the map
+        
+        for key, value in mpp.items():
+            # If frequency is 1
+            if value == 1:
+                # Return the element
+                return key
+        
+        return -1
+
+nums = [1, 2, 2, 4, 3, 1, 4]
+sol = Solution() 
+ans = sol.singleNumber(nums)
+
+print("The single number in given array is:", ans)
