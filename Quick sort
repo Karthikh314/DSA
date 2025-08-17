@@ -1,18 +1,13 @@
 import random
 
 class Solution:
-    # Function to partition the array
     def partition(self, arr, low, high):
-        # Choosing a random index between low and high
         randomIndex = low + random.randint(0, high - low)
-        # Swap the random element with the first element
         arr[low], arr[randomIndex] = arr[randomIndex], arr[low]
 
         # Now choosing arr[low] as the pivot after the swap
         pivot = arr[low]
-        # Starting index for left subarray
         i = low
-        # Starting index for right subarray
         j = high
 
         while i < j:
