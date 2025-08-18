@@ -1,0 +1,57 @@
+from typing import List
+
+class Solution:
+    def nextPermutation(self, nums: List[int]) -> None:
+        ans = self.getAllPermutations(nums)
+
+        index = -1 
+
+        for i in range(len(ans)):
+            if list(nums) == ans[i]:
+                index = i
+                break
+        next_perm = ans[0] if index == len(ans) - 1 else ans[index + 1]
+        for i in range(len(nums)):
+            nums[i] = next_perm[i]
+
+        return
+
+    def getAllPermutations(self, nums: List[int]) -> List[List[int]]:
+        ans = []  # To store the permutation
+
+        self.helperFunc(0, nums, ans)
+
+        ans.sort()  # Sort the permutations
+        return ans  # Return the result
+
+    def helperFunc(self, ind: int, nums: List[int], ans: List[List[int]]) -> None:
+
+        if ind == len(nums):
+            # Add the permutation to the answer
+            ans.append(nums[:])
+            return
+
+        # Traverse the array
+        for i in range(ind, len(nums)):
+            nums[ind], nums[i] = nums[i], nums[ind]  # Swap-In
+            self.helperFunc(ind + 1, nums, ans)
+
+            nums[ind], nums[i] = nums[i], nums[ind]  # Swap-Out
+
+        return
+
+if __name__ == "__main__":
+    nums = [1, 2, 3]
+    sol = Solution()
+
+    print("Given array: ", end="")
+    for x in nums:
+        print(x, end=" ")
+
+    # Function call to get the next permutation of given array
+    sol.nextPermutation(nums)
+
+    # Output
+    print("\nNext Permutation: ", end="")
+    for x in nums:
+        print(x, end=" ")
