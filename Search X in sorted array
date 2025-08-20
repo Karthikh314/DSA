@@ -1,0 +1,34 @@
+class Solution:
+    # Function to find the given target in a sorted array
+    def search(self, nums, target):
+        n = len(nums) # Size of array 
+        
+        low, high = 0, n - 1
+        while low <= high:
+            mid = (low + high) // 2
+
+            if nums[mid] == target:
+                return mid
+                
+            elif target > nums[mid]:
+                low = mid + 1
+                
+            # Otherwise
+            else:
+                high = mid - 1
+
+        return -1
+
+sol = Solution()
+
+# Test the function
+a = [-1, 0, 3, 5, 9, 12]
+target = 9
+
+# Function call to find the given target in a sorted array
+ind = sol.search(a, target)
+
+if ind == -1:
+    print("The target is not present.")
+else:
+    print("The target is at index:", ind)
