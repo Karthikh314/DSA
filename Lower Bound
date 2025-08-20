@@ -1,0 +1,16 @@
+class Solution:
+    # Function to find the lower bound
+    def lowerBound(self, nums, x):
+        n = len(nums)
+        for i in range(n):
+            if nums[i] >= x:
+                return i
+        return n
+
+if __name__ == "__main__":
+    arr = [1, 2, 2, 3]
+    x = 2
+    sol = Solution()
+    ind = sol.lowerBound(arr,  x)
+
+    print("The lower bound is the index:", ind)
