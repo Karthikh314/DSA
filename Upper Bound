@@ -1,0 +1,21 @@
+class Solution:
+    def upperBound(self, nums, x):
+        n = len(nums)
+        for i in range(n):
+            # Return the index if the 
+            # element is greater than x
+            if nums[i] > x:
+                return ;
+        return n
+
+if __name__ == "__main__":
+    nums = [3, 5, 8, 9, 15, 19]
+    x = 9
+
+    # Create an instance of the Solution class
+    solution = Solution()
+
+    # Find the upper bound index for x
+    ind = solution.upperBound(nums, x)
+
+    print("The upper bound is the index:", ind)
