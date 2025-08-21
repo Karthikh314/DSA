@@ -1,0 +1,16 @@
+class Solution:
+    def getFloorAndCeil(self, nums, x):
+        floor, ceil = -1, -1
+        for num in nums:
+            if num <= x and num > floor:
+                floor = num
+            if num >= x and (ceil == -1 or num < ceil):
+                ceil = num
+        return [floor, ceil]
+
+# Driver code
+nums = [3, 4, 4, 7, 8, 10]
+x = 5
+sol = Solution()
+res = sol.getFloorAndCeil(nums, x)
+print(res[0], res[1])
