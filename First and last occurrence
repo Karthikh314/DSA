@@ -1,0 +1,26 @@
+
+class Solution:
+    def searchRange(self, nums, target):
+        first, last = -1, -1
+
+        for i in range(len(nums)):
+            if nums[i] == target:
+                if first == -1:
+                    first = i  
+                last = i  
+
+        # Return the results as a list
+        return [first, last]
+
+# Example usage
+if __name__ == "__main__":
+    nums = [5, 7, 7, 8, 8, 10]
+    target = 8
+
+    # Create an instance of the Solution class
+    sol = Solution()
+
+    # Function call to find the first and last occurrences
+    result = sol.searchRange(nums, target)
+
+    print(f"The first and last occurrences are at indices: {result[0]} and {result[1]}")
