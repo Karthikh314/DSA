@@ -19,5 +19,4 @@ if __name__ == "__main__":
     # Create an instance of Solution class
     sol = Solution()
 
-    # Call stockBuySell function and print the result
     print("The maximum profit by selling the stock is", sol.stockBuySell(Arr, n))
