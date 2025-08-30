@@ -7,9 +7,7 @@ class Solution:
         return mini 
 
 if __name__ == "__main__":
-    arr = [4, 5, 6, 7, 0, 1, 2, 3]
-    
-     # Create an object of the Solution class
+    arr = [4, 5, 6, 7, 0, 1, 2, 3
     sol = Solution()
     
     ans = sol.findMin(arr) 
