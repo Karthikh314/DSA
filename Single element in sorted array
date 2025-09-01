@@ -1,0 +1,29 @@
+class Solution:
+    def singleNonDuplicate(self, nums):
+        n = len(nums)  # Size of the array.
+        
+        if n == 1:
+            return nums[0]
+
+        for i in range(n):
+            if i == 0:
+                if nums[i] != nums[i + 1]:
+                    return nums[i]
+            elif i == n - 1:
+                if nums[i] != nums[i - 1]:
+                    return nums[i]
+            else:
+                if nums[i] != nums[i - 1] and nums[i] != nums[i + 1]:
+                    return nums[i]
+        return -1
+
+if __name__ == "__main__":
+    nums = [1, 1, 2, 2, 3, 3, 4]
+    
+    # Create an object of the Solution class.
+    sol = Solution()
+    
+    ans = sol.singleNonDuplicate(nums)
+    
+    # Print the result.
+    print("The single element is:", ans)
