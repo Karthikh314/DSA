@@ -1,24 +1,17 @@
 class Solution:
-    # Function to search for the target element in the array
     def search(self, nums, target):
         # Get the size of the array
         n = len(nums)
 
         for i in range(n):
-            # Check if the current element is the target
             if nums[i] == target:
-                # Return the index if the target is found
                 return i
         return -1
 
 if __name__ == "__main__":
     nums = [4, 5, 6, 7, 0, 1, 2]
     target = 0
-
-    # Create an instance of the Solution class
     sol = Solution()
-    
-    # Function call to search for the target element
     result = sol.search(nums, target)
 
     if result == -1:
