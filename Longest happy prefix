@@ -1,0 +1,48 @@
+class Solution:
+    # Compute the Longest prefix suffix array for the combined string
+    def computeLPS(self, s):
+        n = len(s)  # size of string
+
+        LPS = [0] * n
+
+        i, j = 1, 0
+
+        # Iterate on the string
+        while i < n:
+            # If the character matches
+            if s[i] == s[j]:
+                LPS[i] = j + 1
+                i += 1
+                j += 1
+
+            # Otherwise
+            else:
+                # Trace back j pointer till it does not match
+                while j > 0 and s[i] != s[j]:
+                    j = LPS[j - 1]
+
+                # If a match is found
+                if s[i] == s[j]:
+                    LPS[i] = j + 1
+                    j += 1
+                i += 1
+
+        return LPS  # Return the computed LPS array
+    def lps(self, s):
+        LPS = self.computeLPS(s)
+        return s[:LPS[-1]]
+
+
+if __name__ == "__main__":
+    s = "ababab"
+
+    # Creating an instance of the solution class
+    sol = Solution()
+
+    '''
+    Function call to find the longest
+    happy prefix of the given string
+    '''
+    ans = sol.lps(s)
+
+    print("The longest happy prefix of the given string is:", ans)
