@@ -6,13 +6,10 @@ class Solution:
             index = ord(ch) - ord('a')
             freq[index] = (freq[index][0] + 1, ch)
 
-        freq.sort(key=lambda x: (-x[0], x[1]))
-
-        # Collect characters with non-zero frequency
+        freq.sort(key=lambda x: (-x[0], x[1])
         result = [ch for f, ch in freq if f > 0]
         return result
 
-# Main method to test the function
 if __name__ == "__main__":
     sol = Solution()
     s = "tree"
