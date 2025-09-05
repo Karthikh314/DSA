@@ -20,7 +20,6 @@ class Solution:
 if __name__ == "__main__":
     nums = [1, 1, 2, 2, 3, 3, 4]
     
-    # Create an object of the Solution class.
     sol = Solution()
     
     ans = sol.singleNonDuplicate(nums)
