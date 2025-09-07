@@ -11,8 +11,6 @@ class Solution:
         i = 0
         while i <= ind and s[i] == '0':
             i += 1
-        
-        # Return the largest odd number substring
         return s[i:ind + 1]
 solution = Solution()
 num = "504"
