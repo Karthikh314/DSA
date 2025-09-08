@@ -2,7 +2,6 @@ class Solution:
     def rotateString(self, s: str, goal: str) 
         if len(s) != len(goal):
             return False  
-        # Try all possible rotations of s
         for i in range(len(s)):
             rotated = s[i:] + s[:i] 
             if rotated == goal:
