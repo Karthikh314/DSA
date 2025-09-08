@@ -1,0 +1,33 @@
+class Solution:
+    def myAtoi(self, input: str) -> int:
+        i, n = 0, len(input)
+  
+        while i < n and input[i] == ' ':
+            i += 1
+        sign = 1
+        if i < n and input[i] == '-':
+            sign = -1
+            i += 1
+        elif i < n and input[i] == '+':
+            i += 1
+        result = 0
+        while i < n and input[i].isdigit():
+            result = result * 10 + (ord(input[i]) - ord('0'))
+            i += 1
+            if result * sign >= 2**31 - 1:
+                return 2**31 - 1
+            if result * sign <= -2**31:
+                return -2**31
+        return result * sign
+
+
+# Driver code
+if __name__ == "__main__":
+    sol = Solution()
+    
+    # Example input
+    input = "42"
+    
+    # Output the result of converting the string to an integer
+    result = sol.myAtoi(input)
+    print(result)  # Expected output: 42
