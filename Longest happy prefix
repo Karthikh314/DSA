@@ -6,17 +6,13 @@ class Solution:
 
         i, j = 1, 0
         while i < n:
-            # If the character matches
             if s[i] == s[j]:
                 LPS[i] = j + 1
                 i += 1
                 j += 1
             else:
-                # Trace back j pointer till it does not match
                 while j > 0 and s[i] != s[j]:
                     j = LPS[j - 1]
-
-                # If a match is found
                 if s[i] == s[j]:
                     LPS[i] = j + 1
                     j += 1
