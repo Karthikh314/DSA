@@ -18,14 +18,11 @@ def printLL(head):
     print()
 
 if __name__ == "__main__":
-    # Create a linked list from a list
     arr = [20, 30, 40]
     X= 10
     head = ListNode(arr[0])
     head.next = ListNode(arr[1])
     head.next.next = ListNode(arr[2])
-
-    # Print the original list
     print("Original List: ", end="")
     printLL(head)
 
