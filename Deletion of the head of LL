@@ -1,4 +1,3 @@
-# Node structure
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -19,7 +18,6 @@ def printList(head):
         current = current.next
     print()
 
-# Function to insert a new node at the beginning of the linked list
 def insertAtHead(head, data):
     newNode = ListNode(data)
     newNode.next = head
@@ -27,7 +25,6 @@ def insertAtHead(head, data):
     return head
 
 if __name__ == "__main__":
-    # Create a linked list
     head = None
     head = insertAtHead(head, 3)
     head = insertAtHead(head, 2)
@@ -35,11 +32,7 @@ if __name__ == "__main__":
 
     print("Original list: ", end="")
     printList(head)
-    
-    # Creating an instance of Solution Class
     sol = Solution()
-    
-    # Function call to delete the head node
     head = sol.deleteHead(head)
 
     print("List after deleting head: ", end="")
