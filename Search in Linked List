@@ -2,44 +2,18 @@
 class Node:
     def __init__(self, data):
         self.data = data      
-        self.next = None     
-class LinkedList:
-    def __init__(self):
-        self.head = None  
-
-    # Function to insert element at the end
-    def insert(self, data):
-        new_node = Node(data)
-        if self.head is None:  
-            self.head = new_node
-            return
-        temp = self.head
-        while temp.next:           
-            temp = temp.next
-        temp.next = new_node
-    def search(self, key):
-        temp = self.head
-        pos = 0
-        while temp:                 # Traverse until end
-            if temp.data == key:    # If key found
-                return pos          # Return its position
-            temp = temp.next
-            pos += 1
-        return -1                  
+        self.next = None   
+class Solution:
+    def searchKey(self, head, key):
+        current = head   # Start from head node
+        
+        # Traverse the linked list
+        while current is not None:
+            if current.val == key:   # If key is found
+                return True
+            current = current.next    # Move to next node
+        
+        return False
 
 
-# Driver code
-if __name__ == "__main__":
-    ll = LinkedList()
-    ll.insert(10)
-    ll.insert(20)
-    ll.insert(30)
-    ll.insert(40)
-
-    key = 30
-    result = ll.search(key)
-
-    if result == -1:
-        print(f"{key} not found in the list")
-    else:
-        print(f"{key} found at position {result}")
+    
