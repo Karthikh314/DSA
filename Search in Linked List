@@ -6,7 +6,6 @@ class Solution:
     def searchKey(self, head, key):
         current = head   # Start from head node
         
-        # Traverse the linked list
         while current is not None:
             if current.val == key:   # If key is found
                 return True
