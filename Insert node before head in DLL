@@ -1,0 +1,54 @@
+# Definition of doubly linked list
+class ListNode:
+    def __init__(self, data1=0, next1=None, prev1=None):
+        self.val = data1
+        self.next = next1
+        self.prev = prev1
+
+# Solution class
+class Solution:
+    def insertBeforeHead(self, head, X):
+        newHead = ListNode(X, head, None)
+        head.prev = newHead
+
+        return newHead  # Return new head
+def arrayToLinkedList(nums):
+    # If array is empty, return None
+    if not nums:
+        return None
+
+    # Create head node with first element of the array
+    head = ListNode(nums[0])
+    # Initialize 'prev' to the head node
+    prev = head
+
+    for i in range(1, len(nums)):
+        temp = ListNode(nums[i], None, prev)
+        prev.next = temp
+        # Move 'prev' to newly created node
+        prev = temp
+
+    # Return head
+    return head
+def printLL(head):
+    while head is not None:
+        print(head.val, end=" ")
+        head = head.next
+    print()
+
+if __name__ == "__main__":
+    nums = [2, 3, 4, 5]
+    head = arrayToLinkedList(nums)
+
+    print("Original List: ", end="")
+    printLL(head)
+
+    sol = Solution()
+
+    ''' Function call to insert a node before 
+    head in a doubly linked list '''
+    head = sol.insertBeforeHead(head, 1)
+
+    # Print the Modified list
+    print("Modified list: ", end="")
+    printLL(head)
