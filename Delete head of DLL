@@ -3,35 +3,22 @@ class ListNode:
         self.val = data1
         self.next = next1
         self.prev = prev1
-
-# Solution class
 class Solution:
     # Function to delete the head of the doubly linked list
     def deleteHead(self, head):
         if head is None or head.next is None:
             return None  # Return None if list is empty or has one node
         
-        # Store current head as 'prev'
         prev = head
-        # Move 'head' to next node
         head = head.next
-
-        # Set 'prev' pointer
         head.prev = None
-
-        # Set 'next' pointer
         prev.next = None
-
-        # Return new head
         return head
 
-# Helper Function to convert an array to a doubly linked list
 def arrayToLinkedList(nums):
     # If array is empty, return None
     if not nums:
         return None
-
-    # Create head node with first element of the array
     head = ListNode(nums[0])
     prev = head
 
