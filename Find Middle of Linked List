@@ -1,0 +1,47 @@
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+class Solution:
+    def middleOfLinkedList(self, head):
+        temp = head
+        count = 0
+    
+        while temp is not None:
+            count += 1  # Increment the count by one 
+            temp = temp.next
+        
+        mid_position = (count) // 2 + 1
+        
+        middle_node = head
+        for _ in range(1, mid_position):
+            middle_node = middle_node.next
+        
+        return middle_node
+def printLinkedList(head):
+    temp = head
+    
+    while temp is not None:
+        print(temp.val, end=" ")
+        temp = temp.next
+    print()
+
+if __name__ == "__main__":
+    head = ListNode(1)
+    second = ListNode(2)
+    third = ListNode(3)
+    fourth = ListNode(4)
+    fifth = ListNode(5)
+
+    head.next = second
+    second.next = third
+    third.next = fourth
+    fourth.next = fifth
+    
+    sol = Solution()
+    middle_node = sol.middleOfLinkedList(head)
+    
+    printLinkedList(head)
+    print("The middle node is:", middle_node.val)
