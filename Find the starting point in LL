@@ -1,4 +1,4 @@
-# Definition of singly linked list:
+
 # class ListNode:
 #     def __init__(self, val=0, next=None):
 #         self.val = val
@@ -6,13 +6,8 @@
 
 class Solution:
     def findStartingPoint(self, head):
-        # Use temp to traverse the linked list
         temp = head
-        
-        # Dictionary to store all visited nodes
         visited = {}
-        
-        # Traverse the list using temp
         while temp is not None:
             # Check if temp has been encountered again
             if temp in visited:
@@ -36,8 +31,6 @@ node4 = ListNode(4)
 node3.next = node4
 node5 = ListNode(5)
 node4.next = node5
-
-# Make a loop from node5 to node2
 node5.next = node2
 
 # Set the head of the linked list
