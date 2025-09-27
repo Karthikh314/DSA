@@ -13,13 +13,10 @@ class Solution:
         while temp is not None:
             if temp in nodeSet:
                 return True
-            # Store the current node
-            # In the set
             nodeSet.add(temp)
             temp = temp.next  
         return False
 
-# Function to print the linked list
 def printLinkedList(head):
     temp = head
     # Traverse the linked list and print each node's value
