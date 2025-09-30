@@ -17,11 +17,9 @@ class Solution:
             visited[temp] = True
             # Move to the next node
             temp = temp.next
-        
-        # If no loop is detected, return None
+    
         return None
 
-# Create a sample linked list with a loop
 node1 = ListNode(1)
 node2 = ListNode(2)
 node1.next = node2
