@@ -8,8 +8,6 @@ class Solution:
     def hasCycle(self, head):
         temp = head  
         nodeSet = set()  
-
-        # Traverse the linked list
         while temp is not None:
             if temp in nodeSet:
                 return True
