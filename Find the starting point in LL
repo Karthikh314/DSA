@@ -9,9 +9,7 @@ class Solution:
         temp = head
         visited = {}
         while temp is not None:
-            # Check if temp has been encountered again
             if temp in visited:
-                # A loop is detected hence return temp
                 return temp
             # Store temp as visited
             visited[temp] = True
