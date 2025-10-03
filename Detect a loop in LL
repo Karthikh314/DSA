@@ -17,16 +17,12 @@ class Solution:
 
 def printLinkedList(head):
     temp = head
-    # Traverse the linked list and print each node's value
     while temp is not None:
         print(temp.val, end=" ")
         temp = temp.next
     print()
 
 def main():
-    # Create a sample linked list
-    # With a loop for testing
-    
     head = ListNode(1)
     second = ListNode(2)
     third = ListNode(3)
