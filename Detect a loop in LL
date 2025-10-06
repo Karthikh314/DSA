@@ -33,12 +33,9 @@ def main():
     second.next = third
     third.next = fourth
     fourth.next = fifth
-    # Create a loop
     fifth.next = third 
 
     sol = Solution()
-    # Check if there is a loop 
-    # In the linked list
     if sol.hasCycle(head):
         print("Loop detected in the linked list.")
     else:
