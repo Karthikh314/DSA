@@ -1,0 +1,60 @@
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+class Solution:
+    def sortList(self, head):
+        # List to store node values
+        arr = []
+
+        # Temporary pointer to traverse
+        # the linked list
+        temp = head
+
+        # Traverse the linked list
+        while temp:
+            arr.append(temp.val)
+            temp = temp.next
+
+        # Sort list containing node values
+        arr.sort()
+
+        temp = head
+        for val in arr:
+            # Update the node's data
+            temp.val = val
+            # Move to the next node
+            temp = temp.next
+
+        # Return the head
+        return head
+
+# Function to print the linked list
+def printLinkedList(head):
+    temp = head
+    while temp:
+        # Print the data of the current node
+        print(temp.val, end=" ")
+        # Move to the next node
+        temp = temp.next
+    print()
+
+# Linked List: 3 2 5 4 1
+head = ListNode(3)
+head.next = ListNode(2)
+head.next.next = ListNode(5)
+head.next.next.next = ListNode(4)
+head.next.next.next.next = ListNode(1)
+
+print("Original Linked List: ", end="")
+printLinkedList(head)
+
+solution = Solution()
+# Sort the linked list
+head = solution.sortList(head)
+
+print("Sorted Linked List: ", end="")
+printLinkedList(head)
+                
