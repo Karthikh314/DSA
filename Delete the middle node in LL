@@ -1,0 +1,75 @@
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+class Solution:
+    # Function to delete middle node of linked list
+    def deleteMiddle(self, head):
+        if not head or not head.next:
+            return None
+
+        # Temporary node to traverse
+        temp = head
+        
+        # Variable to store number of nodes
+        n = 0
+      
+        while temp:
+            n += 1
+            temp = temp.next
+        
+        # Index of the middle node
+        middleIndex = n // 2
+        
+        # Reset temporary node 
+        # to beginning of linked list
+        temp = head
+        
+        """ Loop to find the node 
+        just before the middle node """
+        for _ in range(1, middleIndex):
+            temp = temp.next
+        
+        # If the middle node is found
+        if temp.next:
+            # Create pointer to the middle node
+            middle = temp.next
+            
+            # Adjust pointers to skip middle node
+            temp.next = temp.next.next
+            
+            """ Free the memory allocated 
+            to the middle node """
+            del middle
+        
+        # Return the head of the modified linked list
+        return head
+
+# Function to print the linked list
+def printLL(head):
+    temp = head
+    while temp:
+        print(temp.val, end=" ")
+        temp = temp.next
+    print()
+
+# Creating a sample linked list: 
+head = ListNode(1)
+head.next = ListNode(2)
+head.next.next = ListNode(3)
+head.next.next.next = ListNode(4)
+head.next.next.next.next = ListNode(5)
+
+# Display the original linked list
+print("Original Linked List: ", end="")
+printLL(head)
+
+# Deleting the middle node
+solution = Solution()
+head = solution.deleteMiddle(head)
+
+# Displaying the updated linked list
+print("Updated Linked List: ", end="")
+printLL(head)
