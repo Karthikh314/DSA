@@ -5,15 +5,10 @@ class ListNode:
         self.next = next
 
 class Solution:
-    # Function to delete middle node of linked list
     def deleteMiddle(self, head):
         if not head or not head.next:
             return None
-
-        # Temporary node to traverse
         temp = head
-        
-        # Variable to store number of nodes
         n = 0
       
         while temp:
