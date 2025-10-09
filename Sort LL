@@ -13,7 +13,6 @@ class Solution:
         # the linked list
         temp = head
 
-        # Traverse the linked list
         while temp:
             arr.append(temp.val)
             temp = temp.next
