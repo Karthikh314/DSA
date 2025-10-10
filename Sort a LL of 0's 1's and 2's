@@ -1,0 +1,76 @@
+# Definition of singly linked list:
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+class Solution:
+    # Function to sort the linked list
+    def sortList(self, head):
+        # Initialize counts
+        c0 = 0
+        c1 = 0
+        c2 = 0
+        temp = head
+
+        # Count the number of 0s,
+        # 1s, and 2s
+        while temp is not None:
+            if temp.val == 0:
+                c0 += 1
+            elif temp.val == 1:
+                c1 += 1
+            elif temp.val == 2:
+                c2 += 1
+            temp = temp.next
+
+        temp = head
+
+        # Reassign values to the
+        # nodes based on the counts
+        while temp is not None:
+            if c0 > 0:
+                temp.val = 0
+                c0 -= 1
+            elif c1 > 0:
+                temp.val = 1
+                c1 -= 1
+            elif c2 > 0:
+                temp.val = 2
+                c2 -= 1
+            temp = temp.next
+
+        return head
+
+# Function to print linked list
+def printList(head):
+    while head is not None:
+        print(head.val, end=" ")
+        head = head.next
+    print()
+
+# Function to create new node
+def newNode(data):
+    return ListNode(data)
+
+if __name__ == "__main__":
+    # Creating a linked list
+    head = newNode(1)
+    head.next = newNode(2)
+    head.next.next = newNode(0)
+    head.next.next.next = newNode(1)
+    head.next.next.next.next = newNode(2)
+    head.next.next.next.next.next = newNode(0)
+    head.next.next.next.next.next.next = newNode(1)
+
+    # Print original list
+    print("Original list: ", end="")
+    printList(head)
+
+    # Sort the list
+    sol = Solution()
+    head = sol.sortList(head)
+
+    # Print sorted list
+    print("Sorted list: ", end="")
+    printList(head)
