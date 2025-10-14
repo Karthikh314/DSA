@@ -8,9 +8,6 @@ class Solution:
     def sortList(self, head):
         # List to store node values
         arr = []
-
-        # Temporary pointer to traverse
-        # the linked list
         temp = head
 
         while temp:
