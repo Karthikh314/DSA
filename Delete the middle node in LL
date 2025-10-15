@@ -36,7 +36,6 @@ class Solution:
         # Return the head of the modified linked list
         return head
 
-# Function to print the linked list
 def printLL(head):
     temp = head
     while temp:
