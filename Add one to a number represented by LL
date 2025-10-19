@@ -1,0 +1,81 @@
+# Definition of singly linked list
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+class Solution:
+    # Function to reverse the linked list
+    def reverseList(self, head: ListNode) -> ListNode:
+        # Initialize pointers
+        prev = None
+        current = head
+        next = None
+        
+        while current is not None:
+            # Store next node
+            next = current.next
+            # Reverse the link
+            current.next = prev
+            # Move prev to current
+            prev = current
+            # Move current to next
+            current = next
+        
+        return prev
+    
+    # Function to add one to Linked List
+    def addOne(self, head: ListNode) -> ListNode:
+        # Reverse the linked list
+        head = self.reverseList(head)
+        
+        # Create a dummy node
+        current = head
+        # Initialize carry with 1
+        carry = 1  
+        
+        while current is not None:
+            # Sum the current node's value and the carry
+            sum = current.val + carry
+            # Update carry
+            carry = sum // 10
+            # Update the node's value
+            current.val = sum % 10
+            
+            # If no carry left, break the loop
+            if carry == 0:
+                break
+            
+            # If we've reached the end of the list and there's still a carry,
+            # add a new node with the carry value
+            if current.next is None and carry != 0:
+                current.next = ListNode(carry)
+                break
+            
+            # Move to the next node
+            current = current.next
+        
+        # Reverse the list 
+        head = self.reverseList(head)
+        
+        # New head
+        return head
+
+# Function to print the linked list
+def printList(head: ListNode):
+    while head is not None:
+        print(head.val, end=" ")
+        head = head.next
+    print()
+
+if __name__ == "__main__":
+    # Creation of Linked List
+    head1 = ListNode(1)
+    head1.next = ListNode(2)
+    head1.next.next = ListNode(3)
+
+    # Solution instance
+    solution = Solution()
+    head1 = solution.addOne(head1)
+    print("Result after adding one: ", end="")
+    printList(head1)
